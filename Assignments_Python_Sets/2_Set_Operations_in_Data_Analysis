@@ -1,0 +1,43 @@
+# Task 1: Flight Route Comparison
+# Objective: Compare the flight routes of your airline with a competitor
+
+# Defining sets for our routes and competitor routes
+our_routes = {"LAX", "JFK", "CDG", "DXB"}
+competitor_routes = {"JFK", "CDG", "LHR", "BKK"}
+
+# 1. Destinations that both airlines fly to (intersection)
+shared_routes = our_routes.intersection(competitor_routes)
+print("Destinations that both airlines fly to:", shared_routes)
+
+# 2. Destinations unique to our airline (difference)
+unique_our_routes = our_routes.difference(competitor_routes)
+print("Destinations unique to our airline:", unique_our_routes)
+
+# 3. Check if there are destinations that neither airline shares 
+unique_to_both = our_routes.symmetric_difference(competitor_routes)
+print("Destinations that are unique to either airline (not shared):", unique_to_both)
+# Task 2: Set Operations in Data Analysis
+# Objective: Remove duplicate customer IDs and display unique IDs
+
+# Given list of customer IDs with duplicates
+customer_ids = ["C001", "C002", "C003", "C002", "C001", "C004"]
+
+# Converting list to set to remove duplicates
+unique_customer_ids = set(customer_ids)
+print("Unique customer IDs:", unique_customer_ids)
+
+# Ensure all code executes as expected
+def main():
+    # Running the flight route comparison code
+    print("\n--- Flight Route Comparison ---")
+    print("Destinations that both airlines fly to:", shared_routes)
+    print("Destinations unique to our airline:", unique_our_routes)
+    print("Destinations that are unique to either airline (not shared):", unique_to_both)
+
+    # Running the duplicate entries cleanup code
+    print("\n--- Duplicate Entries Cleanup ---")
+    print("Unique customer IDs:", unique_customer_ids)
+
+# Call main function
+if __name__ == "__main__":
+    main()
